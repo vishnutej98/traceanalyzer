@@ -3,14 +3,16 @@ from typing import NoReturn
 from time import sleep
 import versioninfo
 
+set_timer: float = 0.3
+
 def checkThisFunc() -> NoReturn:
-    for i in range(1000):
+    for i in range(50):
         if i > 1:
             print(f'Hello world! {i} times')
-            sleep(0.3)
+            sleep(set_timer)
         else:
             print(f'Hello world! {i} time')
-            sleep(0.3)
+            sleep(set_timer)
 
 
 if __name__ == "__main__":
