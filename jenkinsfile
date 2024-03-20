@@ -18,6 +18,8 @@ pipeline {
                 echo "Testing.."
                 sh '''
                 python3 main.py
+                cd myapp
+                python3 app.py
                 '''
             }
         }
