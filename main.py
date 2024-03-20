@@ -3,10 +3,10 @@ from typing import NoReturn
 from time import sleep
 import versioninfo
 
-set_timer: float = 0.005
+set_timer: float = 0.0005
 
 def checkThisFunc() -> NoReturn:
-    for i in range(1000):
+    for i in range(10000):
         if i > 1:
             print(f'Hello world! {i} times')
             sleep(set_timer)
