@@ -6,7 +6,7 @@ import versioninfo
 set_timer: float = 0.005
 
 def checkThisFunc() -> NoReturn:
-    for i in range(100):
+    for i in range(1000):
         if i > 1:
             print(f'Hello world! {i} times')
             sleep(set_timer)
@@ -17,4 +17,5 @@ def checkThisFunc() -> NoReturn:
 
 if __name__ == "__main__":
     print(f"Version: {versioninfo.application_version} | {versioninfo.application_status}\n")
+    sleep(3)
     checkThisFunc()
