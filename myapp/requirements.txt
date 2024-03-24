@@ -1,3 +1,3 @@
-# fire==0.4.0
+fire==0.4.0
 # tkinter
-pyinstaller==2.43.1
+# pyinstaller==2.43.1
