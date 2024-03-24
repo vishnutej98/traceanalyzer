@@ -1,21 +1,17 @@
-# Python3!
-from typing import NoReturn
-from time import sleep
-import versioninfo
+import tkinter as tk
+from tkinter import filedialog
 
-set_timer: float = 0.0005
+def get_file_path():
+    root = tk.Tk()
+    root.withdraw()  # Hide the main window
 
-def checkThisFunc() -> NoReturn:
-    for i in range(10000):
-        if i > 1:
-            print(f'Hello world! {i} times')
-            sleep(set_timer)
-        else:
-            print(f'Hello world! {i} time')
-            sleep(set_timer)
+    file_path = filedialog.askopenfilename()  # Open file dialog window for choosing a file
+    return file_path
 
+def main():
+    file_path = get_file_path()
+    print("Selected file path:", file_path)
+    # Perform further actions using the selected file_path
 
 if __name__ == "__main__":
-    print(f"Version: {versioninfo.application_version} | {versioninfo.application_status}\n")
-    sleep(3)
-    checkThisFunc()
+    main()

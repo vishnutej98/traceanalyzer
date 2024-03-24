@@ -4,6 +4,9 @@ pipeline {
             label 'docker-agent-python'
             }
       }
+    environment {
+        OUTPUT_DIRECTORY = 'D:\\Tobetested'
+    }
     triggers {
         pollSCM '* * * * *'
     }
@@ -15,22 +18,13 @@ pipeline {
                 cd myapp
                 pip install -r requirements.txt
                 cd ..
+                sh 'pyinstaller --onefile main.py'
                 '''
             }
         }
         stage('Test') {
             steps {
                 echo "Testing.."
-                sh '''
-                cd myapp
-                python3 app.py
-                python3 app.py --name=Vishnu --age=25
-                python3 app.py --name=Archana --age=23
-                python3 app.py --name=Kamal --age=21
-                python3 app.py --name=Ravi --age=20
-                python3 app.py --name=Bhuvan --age=18
-                python3 app.py --name=Kriyesh --age=16
-                '''
             }
         }
         stage('Deliver') {
@@ -40,6 +34,12 @@ pipeline {
                 echo "doing delivery stuff......"
                 '''
             }
+        }
+    }
+
+    post {
+        success {
+            sh "cp dist/main.exe $OUTPUT_DIRECTORY"
         }
     }
 }
