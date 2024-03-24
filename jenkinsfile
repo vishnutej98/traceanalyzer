@@ -19,7 +19,7 @@ pipeline {
                 cd myapp
                 pip install -r requirements.txt
                 cd ..
-                sh 'pyinstaller --onefile main.py'
+                pyinstaller --onefile main.py
                 '''
             }
         }
