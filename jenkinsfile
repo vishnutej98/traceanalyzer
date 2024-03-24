@@ -22,10 +22,14 @@ pipeline {
             steps {
                 echo "Testing.."
                 sh '''
-                python3 main.py
                 cd myapp
                 python3 app.py
                 python3 app.py --name=Vishnu --age=25
+                python3 app.py --name=Archana --age=23
+                python3 app.py --name=Kamal --age=21
+                python3 app.py --name=Ravi --age=20
+                python3 app.py --name=Bhuvan --age=18
+                python3 app.py --name=Kriyesh --age=16
                 '''
             }
         }
