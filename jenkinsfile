@@ -25,7 +25,7 @@ pipeline {
                 python3 main.py
                 cd myapp
                 python3 app.py
-                python3 app.py --name=Vishnu
+                python3 app.py --name=Vishnu --age=25
                 '''
             }
         }
